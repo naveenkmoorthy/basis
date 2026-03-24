@@ -3,12 +3,18 @@ import products from "../data/products.json";
 
 const router = Router();
 
-// GET /api/products — return all products
 router.get("/", (req: Request, res: Response) => {
-  res.json(products);
+  const { category } = req.query;
+
+  const filtered = category
+    ? products.filter(
+        (p) => p.category.toLowerCase() === (category as string).toLowerCase()
+      )
+    : products;
+
+  res.json(filtered);
 });
 
-// GET /api/products/:id — return a single product
 router.get("/:id", (req: Request, res: Response) => {
   const product = products.find((p) => p.id === req.params.id);
 
@@ -18,6 +24,11 @@ router.get("/:id", (req: Request, res: Response) => {
   }
 
   res.json(product);
+});
+
+router.get("/meta/categories", (req: Request, res: Response) => {
+  const categories = [...new Set(products.map((p) => p.category))].sort();
+  res.json(categories);
 });
 
 export default router;
