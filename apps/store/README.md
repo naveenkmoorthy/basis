@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Basis Store
 
-## Getting Started
+A product listing app built with the [Basis](../..) design system.
 
-First, run the development server:
+## Overview
+
+Demonstrates real-world usage of `@repo/ui` components inside a Next.js App Router application. Connects to a separate Express API for product data.
+
+## Stack
+
+- Next.js 15 (App Router)
+- React 19
+- Tailwind CSS v4
+- `@repo/ui` — Basis component library
+
+## Features
+
+- Product listing grid with category filtering
+- Product detail page
+- Loading skeletons
+- Error boundary
+- Server components with ISR caching
+
+## Getting started
+
+From the monorepo root:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm --filter @basis/store dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Runs at http://localhost:3000. Requires the API to be running at http://localhost:4000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── page.tsx                  # Product listing
+│   ├── loading.tsx               # Skeleton state
+│   ├── error.tsx                 # Error boundary
+│   └── products/[id]/page.tsx    # Product detail
+├── components/
+│   ├── Header.tsx
+│   ├── Container.tsx
+│   ├── ProductCard.tsx
+│   ├── ProductGrid.tsx
+│   └── CategoryFilter.tsx
+├── lib/
+│   └── api.ts                    # Data fetching utilities
+└── types/
+    └── product.ts
+```
 
-## Learn More
+## Environment variables
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Variable | Default | Description |
+|---|---|---|
+| `NEXT_PUBLIC_API_URL` | `http://localhost:4000` | Base URL for the Express API |
