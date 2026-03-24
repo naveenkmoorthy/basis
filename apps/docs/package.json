@@ -3,7 +3,33 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "echo 'docs placeholder'",
-    "dev": "echo 'docs placeholder'"
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@repo/ui": "workspace:*",
+    "@repo/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@repo/eslint-config": "workspace:*",
+    "storybook": "8.6.18",
+    "@storybook/addon-essentials": "8.6.18",
+    "@storybook/addon-interactions": "8.6.18",
+    "@storybook/addon-a11y": "8.6.18",
+    "@storybook/blocks": "8.6.18",
+    "@storybook/react": "8.6.18",
+    "@storybook/react-vite": "8.6.18",
+    "@storybook/test": "8.6.15",
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0"
   }
 }

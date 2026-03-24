@@ -1,0 +1,9 @@
+{
+  "extends": "@repo/typescript-config/storybook",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {}
+  },
+  "include": [".storybook", "src", "stories"],
+  "exclude": ["node_modules", "dist", "storybook-static"]
+}

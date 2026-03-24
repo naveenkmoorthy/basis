@@ -53,7 +53,7 @@
   --color-bg-muted:     var(--color-neutral-200);
 
   --color-text:         var(--color-neutral-900);
-  --color-text-muted:   var(--color-neutral-500);
+  --color-text-muted:   var(--color-neutral-600);
   --color-text-subtle:  var(--color-neutral-400);
   --color-text-inverse: var(--color-neutral-50);
 
@@ -125,19 +125,19 @@
   --ease-default:    cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ─── Dark mode overrides ─── */
-@media (prefers-color-scheme: dark) {
-  @theme {
-    --color-bg:           var(--color-neutral-950);
-    --color-bg-subtle:    var(--color-neutral-900);
-    --color-bg-muted:     var(--color-neutral-800);
+/* ─── Dark mode (opt-in: add class "dark" on a root ancestor, e.g. <html>) ─── */
+.dark {
+  color-scheme: dark;
 
-    --color-text:         var(--color-neutral-50);
-    --color-text-muted:   var(--color-neutral-400);
-    --color-text-subtle:  var(--color-neutral-500);
-    --color-text-inverse: var(--color-neutral-900);
+  --color-bg:            var(--color-neutral-950);
+  --color-bg-subtle:     var(--color-neutral-900);
+  --color-bg-muted:      var(--color-neutral-800);
 
-    --color-border:       var(--color-neutral-800);
-    --color-border-strong:var(--color-neutral-600);
-  }
+  --color-text:          var(--color-neutral-50);
+  --color-text-muted:    var(--color-neutral-400);
+  --color-text-subtle:   var(--color-neutral-500);
+  --color-text-inverse:  var(--color-neutral-900);
+
+  --color-border:        var(--color-neutral-800);
+  --color-border-strong: var(--color-neutral-600);
 }
