@@ -7,8 +7,7 @@ A modern, accessible design system built with React 19, Tailwind CSS v4, and Tur
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.2.2-38bdf8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![Turborepo](https://img.shields.io/badge/Turborepo-2.8.20-ef4444?logo=turborepo&logoColor=white)](https://turbo.build)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
-
-**[View Storybook →](https://69c21a13c92f56296fd7f891-lxwrqcpxpc.chromatic.com/)** &nbsp;·&nbsp; **[GitHub →](https://github.com/naveenkmoorthy/design-system)**
+[![Chromatic](https://img.shields.io/badge/Storybook-Live-ff4785?logo=storybook&logoColor=white)](https://69c21a13c92f56296fd7f891-lxwrqcpxpc.chromatic.com/)
 
 ---
 
