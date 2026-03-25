@@ -26,12 +26,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
         env:
-          DATABASE_URL: "postgresql://localhost:5432/placeholder"
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
       - name: Build
         run: pnpm build
         env:
-          DATABASE_URL: "postgresql://localhost:5432/placeholder"
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
           NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
 
       - name: Typecheck
@@ -56,7 +56,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
         env:
-          DATABASE_URL: "postgresql://localhost:5432/placeholder"
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
       - name: Build Storybook
         run: pnpm build --filter docs
